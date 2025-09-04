@@ -1,0 +1,6 @@
+[MAIN]
+
+
+[FORMAT]
+disable =
+    too-few-public-methods

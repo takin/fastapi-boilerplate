@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/psf/black
-    rev: 24.1.1
+    rev: 25.1.0
     hooks:
       - id: black
         language_version: python3.13
@@ -8,27 +8,28 @@ repos:
 
   # Import sorting
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 6.0.1
     hooks:
       - id: isort
         args: [--profile=black, --line-length=88]
 
   # Linting
   - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
+    rev: 7.3.0
     hooks:
       - id: flake8
         args: [--max-line-length=88, --extend-ignore=E203]
 
   # Pylint for additional code quality checks
   - repo: https://github.com/pycqa/pylint
-    rev: v3.0.3
+    rev: v3.3.8
     hooks:
       - id: pylint
+        additional_dependencies: [pydantic, fastapi, uvicorn, pydantic_settings]
 
   # Type checking with mypy (temporarily disabled due to package structure issues)
   # - repo: https://github.com/pre-commit/mirrors-mypy
-  #   rev: v1.8.0
+  #   rev: v1.17.1
   #   hooks:
   #     - id: mypy
   #       additional_dependencies: [pydantic, fastapi, uvicorn]
@@ -36,7 +37,7 @@ repos:
 
   # Security checks
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
+    rev: 1.8.6
     hooks:
       - id: bandit
         args: [-r, --skip, B104]
@@ -44,7 +45,7 @@ repos:
 
   # General file checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v6.0.0
     hooks:
       - id: check-merge-conflict
       - id: check-yaml
@@ -60,11 +61,11 @@ repos:
       - id: requirements-txt-fixer
 
   # Check for secrets in code (temporarily disabled due to compatibility issues)
-  # - repo: https://github.com/Yelp/detect-secrets
-  #   rev: v1.4.0
-  #   hooks:
-  #     - id: detect-secrets
-  #       args: [--baseline, .secrets.baseline]
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: [--baseline, .secrets.baseline]
 
   # UV dependency check (manual command)
   - repo: local
