@@ -1,6 +1,6 @@
-# AI Talent Management System (TMS) API
+# FastAPI Boilerplate
 
-A modern, FastAPI-based REST API service for talent management systems with AI capabilities. This project provides a robust foundation for building scalable talent management applications.
+A FastAPI based REST API project boilerplate. This to allow a fast project initialization
 
 ## 🚀 Features
 
@@ -105,7 +105,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## 📁 Project Structure
 
 ```
-tms/
+root/
 ├── app/                    # Application package
 │   ├── __init__.py
 │   ├── app.py            # FastAPI application factory
@@ -218,16 +218,6 @@ For support and questions:
 - Create an issue in the repository
 - Contact the development team
 - Check the API documentation at `/docs`
-
-## 🔮 Roadmap
-
-- [ ] Authentication and authorization
-- [ ] Database models and migrations
-- [ ] API endpoints for talent management
-- [ ] AI-powered talent matching
-- [ ] Performance monitoring and metrics
-- [ ] Comprehensive test coverage
-- [ ] CI/CD pipeline setup
 
 ---
 
